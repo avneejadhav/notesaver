@@ -1,0 +1,35 @@
+{% extends "registration_base.html" %}
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <!-- <h1><a class="wrapper toggle" href="#">Sign Up</a> </h1> -->
+    <!-- <h2><a class="wrapper toggle" href="register">Sign Up</a> </h2> -->
+ 
+    <!-- Icon -->
+   <!--  <div class="fadeIn first">
+      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+    </div>
+ -->
+    <!-- Login Form -->
+    <form action="signup" method="post">
+      {% csrf_token %}  
+      <input type="text" id="login" class="fadeIn second" name="first_name" placeholder="First_name">
+      <input type="text" id="login" class="fadeIn second" name="last_name" placeholder="Last_name">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email">
+      <input type="password" id="login" class="fadeIn second" name="password1" placeholder="Password">
+      <input type="password" id="password" class="fadeIn third" name="password2" placeholder="Confirm password">
+      <input type="submit" class="fadeIn fourth" value="Register">
+
+      <div>
+            {% for message in messages %}
+            <h3> {{message}}  </h3>
+            {% endfor %}
+    </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+  </div>
+</div>
+{% endblock %}
